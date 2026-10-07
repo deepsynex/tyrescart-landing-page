@@ -461,7 +461,8 @@ a:focus-visible {
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  border-radius: calc(var(--u) * 10);
+  border-radius: calc(var(--u) * 8);
+  box-shadow: var(--shadow-sm);
   background: linear-gradient(180deg, #0a3a20 0%, #0f4a2a 100%);
 }
 
@@ -582,7 +583,7 @@ a:focus-visible {
 
 .brand-row {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: calc(var(--u) * 9);
   margin-top: calc(var(--u) * 13);
 }
@@ -597,8 +598,6 @@ a:focus-visible {
 }
 
 /* Logos shown whole, scaled to fit the tile */
-.brand-row .brand-extra { display: none; }
-
 .brand-row img {
   width: auto;
   height: auto;
@@ -807,6 +806,10 @@ a:focus-visible {
 .faq-item summary:hover,
 .faq-item[open] summary { color: var(--green-dark); }
 
+.faq-item[open] summary {
+  padding-bottom: max(6px, calc(var(--u) * 8));
+}
+
 .faq-item summary:focus-visible {
   outline: 2px solid var(--green);
   outline-offset: -4px;
@@ -846,7 +849,7 @@ a:focus-visible {
 
 .faq-answer p {
   margin: 0 max(18px, calc(var(--u) * 22));
-  padding: max(12px, calc(var(--u) * 14)) 0 max(18px, calc(var(--u) * 20));
+  padding: max(8px, calc(var(--u) * 10)) 0 max(18px, calc(var(--u) * 20));
   border-top: 1px solid var(--line);
   font-size: max(13px, calc(var(--u) * 12.5));
   line-height: 1.7;
@@ -1248,9 +1251,6 @@ a:focus-visible {
     -webkit-mask-image: linear-gradient(90deg, transparent 0 18%, #000 40%);
     mask-image: linear-gradient(90deg, transparent 0 18%, #000 40%);
   }
-
-  .promo-card { display: none; }
-  .brand-row .brand-extra { display: grid; }
 }
 
 /* ---------- Tablet: 800px-wide mockup ---------- */
@@ -1328,15 +1328,25 @@ a:focus-visible {
     width: calc(var(--u) * 855);
   }
 
-  /* Four cards, then three wider ones */
+  /* 4 columns x 2 rows (all 8 cards use the same layout) */
   .country-grid {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: calc(var(--u) * 15) calc(var(--u) * 13);
     margin: calc(var(--u) * 14) calc(var(--u) * 18) 0 calc(var(--u) * 22);
   }
 
-  .country-card { grid-column: span 3; padding: calc(var(--u) * 5) calc(var(--u) * 5) calc(var(--u) * 10); }
-  .country-card:nth-child(n + 5) { grid-column: span 4; padding: calc(var(--u) * 5) calc(var(--u) * 6) calc(var(--u) * 12); }
+  .country-card { padding: calc(var(--u) * 5) calc(var(--u) * 5) calc(var(--u) * 10); }
+
+  .promo-card {
+    border-radius: calc(var(--u) * 8);
+  }
+
+  .promo-card h3 {
+    top: calc(var(--u) * 16);
+    left: calc(var(--u) * 14);
+    font-size: max(12px, calc(var(--u) * 15));
+    line-height: 1.35;
+  }
 
   .country-card h3 { margin: calc(var(--u) * 8) 0 0 calc(var(--u) * 8); font-size: max(13px, calc(var(--u) * 16)); }
   .name-ar { margin-left: calc(var(--u) * 8); font-size: max(12px, calc(var(--u) * 13.5)); }
@@ -1534,19 +1544,23 @@ a:focus-visible {
     font-size: max(9px, calc(var(--u) * 14));
   }
 
-  /* Syria: full width, photo left, details right */
-  .country-card--wide {
-    grid-column: 1 / -1;
-    grid-template-columns: 46% 1fr;
-    grid-template-areas:
-      "media names"
-      "media act";
-    align-items: center;
-    padding: calc(var(--u) * 5);
+  .promo-card {
+    border-radius: calc(var(--u) * 8);
+    box-shadow: var(--shadow-sm);
   }
 
-  .country-card--wide .card-names { align-self: end; margin: 0 0 0 calc(var(--u) * 22); }
-  .country-card--wide .card-actions { align-self: start; padding: calc(var(--u) * 10) calc(var(--u) * 12) 0 calc(var(--u) * 22); }
+  .promo-card h3 {
+    top: max(10px, calc(var(--u) * 14));
+    left: max(10px, calc(var(--u) * 12));
+    font-size: max(11px, calc(var(--u) * 14));
+    line-height: 1.3;
+  }
+
+  .promo-card img {
+    max-height: 58%;
+    object-fit: cover;
+    object-position: bottom;
+  }
 
   /* Value strip: titles only */
   .values {
@@ -1629,11 +1643,11 @@ a:focus-visible {
    Wide screens (past the 1280px design): the page stays full width, the
    photo runs to the right edge, and content sits in a centred column.
    ========================================================================== */
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
   .hero { overflow: hidden; }
 
   .hero-media {
-    width: min(100%, calc(var(--u) * 1056));
+    width: min(100%, calc(var(--u) * 1080));
     margin-left: auto;
   }
 
