@@ -159,7 +159,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   font-size: calc(var(--u) * 57);
-  line-height: calc(var(--u) * 56);
+  line-height: calc(var(--u) * 61);
   font-weight: 800;
   letter-spacing: calc(var(--u) * -1.5);
   color: var(--ink);
@@ -1649,12 +1649,12 @@ a:focus-visible {
   }
 
   .country-panel { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
-  .country-grid  { width: calc(var(--u) * 952); margin-left: auto; margin-right: auto; }
-  .values        { width: calc(var(--u) * 957); margin-left: auto; margin-right: auto; }
-  .brands        { width: calc(var(--u) * 948); margin-left: auto; margin-right: auto; }
-  .banner        { width: calc(var(--u) * 976); margin-left: auto; margin-right: auto; }
-  .seo-intro     { width: calc(var(--u) * 957); margin-left: auto; margin-right: auto; }
-  .faq           { width: calc(var(--u) * 957); margin-left: auto; margin-right: auto; }
+  .country-grid  { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
+  .values        { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
+  .brands        { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
+  .banner        { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
+  .seo-intro     { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
+  .faq           { width: calc(var(--u) * 965); margin-left: auto; margin-right: auto; }
 }
 
 /* Wider than the 1920px page: the hero still reaches the screen's right edge */
